@@ -1,33 +1,29 @@
 #!/bin/bash
+set -e
 
 GITHUB_RAW_MIRROR="https://raw.fastgit.org"
 # GITHUB_RAW_MIRROR="https://raw.githubusercontent.com"
 
+
+
+function curl_sh_install(){
+    echo "Installing $1..."
+    sh -c "$(curl -fsSL ${GITHUB_RAW_MIRROR}/$2)"
+    echo "$1 installed!"
+}
 ######################
 # Install oh-my-zsh
 ######################
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL ${GITHUB_RAW_MIRROR}/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "oh-my-zsh installed!"
+curl_sh_install oh-my-zsh ohmyzsh/ohmyzsh/master/tools/install.sh
+
 
 ######################
 # Install pyenv
 ######################
-echo "Installing pyenv..."
-sh -c "$(curl -fsSL ${GITHUB_RAW_MIRROR}/pyenv/pyenv-installer/master/bin/pyenv-installer)"
-echo "pyenv installed!"
+curl_sh_install pyenv pyenv/pyenv-installer/master/bin/pyenv-installer
 
-
-######################
-# Install poetry
-######################
-echo "Installing poetry..."
-sh -c "$(curl -fsSL ${GITHUB_RAW_MIRROR}/python-poetry/poetry/master/get-poetry.py)"
-echo "poetry installed!"
 
 ######################
 # Install gvm
 ######################
-echo "Installing gvm..."
-sh -c "$(curl -fsSL ${GITHUB_RAW_MIRROR}/moovweb/gvm/master/binscripts/gvm-installer)"
-echo "gvm installed!"
+curl_sh_install gvm moovweb/gvm/master/binscripts/gvm-installer
