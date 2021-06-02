@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.init: init
+    ~/.zshrc: zshrc
+    ~/.oh-my-zsh-custom: zsh/ohmyzsh-custom
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
