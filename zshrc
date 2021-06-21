@@ -78,6 +78,8 @@ plugins=(
     extract
     docker
     golang
+    sudo
+    dotenv
     # 下面是第三方模块
     zsh-completions
     zsh-autosuggestions
