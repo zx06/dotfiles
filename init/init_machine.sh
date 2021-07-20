@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-# GITHUB_RAW_MIRROR="https://raw.fastgit.org"
-GITHUB_RAW_MIRROR="https://raw.githubusercontent.com"
+GITHUB_RAW_MIRROR="https://raw.fastgit.org"
+# GITHUB_RAW_MIRROR="https://raw.githubusercontent.com"
 
 # $1:coler $2:str
 function colored_echo(){
